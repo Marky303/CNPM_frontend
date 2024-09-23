@@ -1,0 +1,44 @@
+.btn-open-chatbubble {
+  position: absolute;
+  bottom: 2.5vh;
+  left: 2.5vh;
+  background-color: rgb(13, 110, 253);
+
+  border: none;
+
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+
+  background-image: url("/src/assets/gemini.png");
+  background-size: contain;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.5s ease, box-shadow 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.btn-open-chatbubble:hover {
+  transform: rotate(360deg) scale(1.05);
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+  background-color: rgb(10, 85, 196);
+
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(164, 201, 255);
+}
+
+.btn-open-chatbubble:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+  background-color: rgb(8, 70, 162);
+
+  transition: transform 0.1s ease;
+}
+
+.conversation-header{
+  background-color: rgb(8, 32, 69);
+}

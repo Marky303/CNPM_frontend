@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.flex-shrink-0-demo-part::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-prev {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-control-prev:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: translateX(-3px);
+  background-color: rgba(203, 203, 203, 0.3);
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-control-next {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-control-next:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: translateX(3px);
+  background-color: rgba(203, 203, 203, 0.3);
+}
+
+.carousel-indicators {
+  margin-bottom: 0px;
+}
+
+.carousel-dark .carousel-indicators [data-bs-target],
+.carousel-indicators [data-bs-target] {
+  background-color: rgb(182, 182, 182);
+}
+
+.carousel-indicators .active {
+  background-color: rgb(138, 138, 138);
+}
