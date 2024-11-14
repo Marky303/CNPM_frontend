@@ -20,6 +20,10 @@ import Pricing from "./pages/Intro/Pricing";
 // Import authentication pages
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
+import History from "./pages/User/History";
+import Option from "./pages/User/Option";
+//Import User pages
+import Upload from "./pages/User/Upload";
 
 // Import main pages
 import Dashboard from "./pages/Main/Dashboard";
@@ -40,7 +44,9 @@ const App = () => (
             <Route exact path="/pricing" element={<Pricing />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
-
+            <Route exact path="/upload" element={<Upload />} />
+            <Route exact path="/option" element={<Option />} />
+            <Route exact path="/history" element={<History />} />
             <Route exact path="/" element={<ChatBubbleLayout />}>
               <Route exact path="/dashboard" element={<Dashboard />} />
             </Route>
