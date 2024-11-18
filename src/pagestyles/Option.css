@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+.dialog {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--Black, #000);
+    column-gap: 1rem;
+
+}
+.alloption {
+    display: flex;
+    flex-direction: column;
+}
+.PrintContent {
+    flex-grow: 1;
+    padding: 1.5rem;
+    height: 100%;
+    border-right: 1px solid var(--Black, #000);
+
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.5rem;
+    overflow-y: scroll;
+}
+
+.Option {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--Black, #000);
+    width: 33.333333%;
+    height: 100%;
+}
+
+.defaultoption {
+    width: 100%;
+    height: 45%;
+    border: 1px solid var(--Black, #000);
+    overflow-y: scroll;
+}
+
+.moreoption {
+    width: 100%;
+    height: 45%;
+    border-left: 1px solid var(--Black, #000);
+    border-right: 1px solid var(--Black, #000);
+}
+
+.button_and_fee {
+    width: 100%;
+    height: 10%;
+    border: 1px solid var(--Black, #eee);
+    align-items: center;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 1rem;
+    border: 1px solid var(--Black, #000);
+}
+
+.button {
+
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.print {
+    width: 40%;
+    height: 100%;
+}
+
+.cancel {
+    width: 40%;
+    height: 100%;
+}
+
+.frame1 {
+    display: inline-flex;
+    flex-grow: 1;
+    height: 100%;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 1px solid var(--Black, #000);
+}
+
+.frame2 {
+    display: inline-flex;
+    flex-grow: 1;
+    height: 100%;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 1px solid var(--Black, #000);
+}
+
+.moreoption {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: start;
+    column-gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.moreoption>div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+}
+
+.moreoption>span {
+    font-weight: 600;
+}
+
+.moreoption>div>svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.25rem;
+}
+.defaultoption>div{
+    padding: 0.25rem;
+}
+.defaultoption>div>span{
+    font-weight: 600;
+}
+
+.printer,.numpage,.numobject,.pagedirection {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    margin-top: 1.25rem;
+    
+}
+.numpage {
+    width: 100%;
+    height: 2.5rem;
+}
+.numpage > div {
+    display: flex;
+    flex-direction: column;
+}
+.numpage >div,.printer>select,.numobject>input,.pagedirection>select{
+    height: 2.5rem;
+    width: 60%;
+}
+
+.numpage>div>.inputnumpage>input {
+    height:1.5rem;
+    width: 100%;
+}
+.moreoption>.dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.dropdown>.moreoption-size-select,
+.moreoption-pages-select,
+.moreoption-padding-select,
+.moreoption-ratio-select,
+.moreoption-custom-attribute {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.dropdown>.moreoption-size-select>select,
+.moreoption-padding-select>select,
+.moreoption-ratio-select>select,
+.moreoption-pages-select>input {
+    height: 2.5rem;
+    width: 60%;
+}
+
+.dropdown>.moreoption-size-select>span,
+.moreoption-padding-select>span,
+.moreoption-ratio-select>span,
+.moreoption-pages-select>span,
+.moreoption-custom-attribute>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown>.moreoption-custom-attribute>div {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    column-gap: 2rem;
+}
+
+.dropdown>.moreoption-custom-attribute>div>.container {
+    display: flex;
+    flex-direction: row-reverse;
+    row-gap: 2rem;
+}
+
+.dropdown>.moreoption-custom-attribute>div>.container >span {
+    margin: 0 0 0 0.5rem;
+}
+.print-btn{
+    border-radius: 1.875rem !important;
+    width: 4.5rem; !important;
+}
+.cancel-btn {
+    background-color: #eee !important;
+    color:  #0a58ca !important;
+    border-radius: 1.875rem !important;
+}

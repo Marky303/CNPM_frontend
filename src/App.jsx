@@ -22,6 +22,7 @@ import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import History from "./pages/User/History";
 import Option from "./pages/User/Option";
+import TestComponent from "./pages/User/Testcomponent";
 //Import User pages
 import Upload from "./pages/User/Upload";
 
@@ -49,6 +50,7 @@ const App = () => (
             <Route exact path="/history" element={<History />} />
             <Route exact path="/" element={<ChatBubbleLayout />}>
               <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route exact path="/test" element={<TestComponent />} />
             </Route>
           </Route>
         </Route>

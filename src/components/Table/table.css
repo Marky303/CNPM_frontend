@@ -1,0 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+.table {
+    border: 1px solid var(--Black, #000);
+    border-radius: 10px !important;
+}
