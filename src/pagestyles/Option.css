@@ -7,16 +7,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     border: 1px solid var(--Black, #000);
     column-gap: 1rem;
+    user-select: none;
 
 }
+
 .alloption {
     display: flex;
     flex-direction: column;
 }
+
 .PrintContent {
     flex-grow: 1;
     padding: 1.5rem;
@@ -26,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     column-gap: 1.5rem;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 .Option {
@@ -44,7 +47,8 @@
     width: 100%;
     height: 45%;
     border: 1px solid var(--Black, #000);
-    overflow-y: scroll;
+    padding: .75rem 1rem;
+    overflow: hidden;
 }
 
 .moreoption {
@@ -52,6 +56,8 @@
     height: 45%;
     border-left: 1px solid var(--Black, #000);
     border-right: 1px solid var(--Black, #000);
+    padding: .75rem 1rem;
+    overflow: hidden;
 }
 
 .button_and_fee {
@@ -117,8 +123,6 @@
     align-content: center;
     justify-content: start;
     column-gap: 1rem;
-    cursor: pointer;
-    user-select: none;
 }
 
 .moreoption>div {
@@ -138,43 +142,68 @@
     height: 1.25rem;
     margin-top: 0.25rem;
 }
-.defaultoption>div{
+
+.defaultoption>div {
     padding: 0.25rem;
 }
-.defaultoption>div>span{
+
+.defaultoption>div>span {
     font-weight: 600;
 }
 
-.printer,.numpage,.numobject,.pagedirection {
+.printer,
+.numpage,
+.numobject,
+.pagedirection {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
     padding: 0 0.5rem;
     margin-top: 1.25rem;
-    
+    border-radius: 0.5rem;
+
 }
+
 .numpage {
     width: 100%;
-    height: 2.5rem;
+    height: 5rem;
 }
-.numpage > div {
+
+.numpage>div {
     display: flex;
     flex-direction: column;
-}
-.numpage >div,.printer>select,.numobject>input,.pagedirection>select{
-    height: 2.5rem;
     width: 60%;
 }
 
-.numpage>div>.inputnumpage>input {
-    height:1.5rem;
-    width: 100%;
+.printer>select,
+.numobject>input,
+.pagedirection>select {
+    height: 2.5rem;
+    width: 60%;
+    cursor: pointer;
+    border-radius: 0.5rem;
+border: 1px solid #000;
 }
+
+.numpage>div>select,
+.numpage>div>input {
+    width: 100%;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+border: 1px solid #000;
+}
+
+/* .numpage>div>.inputnumpage>input {
+    height: 1.5rem;
+    width: 100%;
+} */
+
 .moreoption>.dropdown {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    
     transition: all;
     transition-duration: 200ms;
 }
@@ -198,16 +227,24 @@
 .moreoption-pages-select>input {
     height: 2.5rem;
     width: 60%;
+    cursor: pointer;
+    border-radius: 0.5rem;
+border: 1px solid #000;
 }
 
 .dropdown>.moreoption-size-select>span,
 .moreoption-padding-select>span,
 .moreoption-ratio-select>span,
-.moreoption-pages-select>span,
-.moreoption-custom-attribute>span {
+.moreoption-pages-select>span {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.moreoption-custom-attribute>span {
+    display: flex;
+    justify-content: start;
+    align-items: start;
 }
 
 .dropdown>.moreoption-custom-attribute>div {
@@ -223,15 +260,27 @@
     row-gap: 2rem;
 }
 
-.dropdown>.moreoption-custom-attribute>div>.container >span {
+.dropdown>.moreoption-custom-attribute>div>.container>span {
+    
     margin: 0 0 0 0.5rem;
+
 }
-.print-btn{
+.dropdown>.moreoption-custom-attribute>div>.container>input{
+    color: #000;
+font-family: Lato;
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 900;
+line-height: 1rem;
+}
+
+.print-btn {
     border-radius: 1.875rem !important;
-    width: 4.5rem; !important;
+    width: 4.5rem !important;
 }
+
 .cancel-btn {
     background-color: #eee !important;
-    color:  #0a58ca !important;
+    color: #0a58ca !important;
     border-radius: 1.875rem !important;
 }

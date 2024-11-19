@@ -7,9 +7,10 @@ const Option = () => {
     return (
         <div className='dialog'>
             <div className='PrintContent'>
+                
                 <div className='frame1'></div>
                 <div className='frame2'></div>
-                <div className='scrollbar'></div>
+                
             </div>
             <div className='Option'>
                 <div className='defaultoption'>
@@ -21,22 +22,22 @@ const Option = () => {
                         <div className='printer'>
                             <span>Máy in</span>
                             <select>
-                                    <option value="printer1">Máy 1</option>
-                                    <option value="printer2">Máy 2</option>
-                                    <option value="printer3">Máy 3</option>
+                                <option value="printer1">Máy 1</option>
+                                <option value="printer2">Máy 2</option>
+                                <option value="printer3">Máy 3</option>
                             </select>
                         </div>
                         <div className='numpage'>
                             <span>Trang</span>
                             <div>
-                            <select onChange={(e) => e.target.value === "Option" ? setisOption(true) : setisOption(false)}>
+                                <select onChange={(e) => e.target.value === "Option" ? setisOption(true) : setisOption(false)}>
                                     <option value="All">Tất cả</option>
                                     <option value="Option">Tùy chỉnh</option>
-                            </select>
-                            
-                            {isOption && (<div className='inputnumpage'>
-                                <input />
-                                </div>)}
+                                </select>
+
+                                {isOption && (
+                                    <input />
+                                )}
 
                             </div>
                         </div>
@@ -102,14 +103,14 @@ const Option = () => {
                                             Đầu trang và chân trang
                                         </span>
                                         <input type="checkbox" />
-                                        <span className="checkmark"></span>
+                                        
                                     </label>
                                     <label className="container">
                                         <span>
                                             Đồ họa nền
                                         </span>
                                         <input type="checkbox" />
-                                        <span className="checkmark"></span>
+                                        
                                     </label>
                                 </div>
                             </div>
