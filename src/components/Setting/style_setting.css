@@ -1,0 +1,98 @@
+body {
+    background: #F1F2F4;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.board1 {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    width: 122rem; /* 1220px / 16 */
+    min-height: 46rem; /* 460px / 16 */
+    max-width: 100%;
+    flex-direction: column;
+    margin-top: 8rem; /* 75px / 16 */
+}
+
+.board1 h2 {
+    font-size: 1.8rem; /* 18px / 16 */
+    font-weight: 700;
+    margin-left: 40rem; /* 350px / 16 */
+}
+
+.board1 label {
+    font-size: 1.8rem; /* 18px / 16 */
+    font-weight: 700;
+    margin-right: 24rem; /* 400px / 16 */
+}
+
+input[type="checkbox"]:checked {
+    background-color: black;
+    border-radius: 0;
+}
+
+.custom1 {
+    max-width: 100rem; /* 270px / 16 */
+    margin-right: 34rem; /* 400px / 16 */
+    position: relative;
+}
+
+.custom2 {
+    max-width: 100rem; /* 100px / 16 */
+    margin-right: 53rem; /* 570px / 16 */
+}
+
+.icon {
+    font-size: 2.5rem; /* 30px / 16 */
+    position: absolute;  
+    right: 2.1875rem; /* 35px / 16 */
+}
+
+.board1 button {
+    font-size: 2.2rem; /* 2rem = 32px / 16 */
+    padding: 0.5rem 1.625rem; /* 0.5rem (8px) / 16 và 2.6rem (41.6px) / 16 */
+    border-radius: 0.8rem; /* 12px / 16 */
+    font-weight: 700;
+}
+
+.custom-button1 {
+    background-color: #1488DB;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button1:hover {
+    background-color: #1056c7;
+}
+
+.custom-button2 {
+    background-color: #ffffff;
+    color: #1488DB;
+    border: 0.125rem solid #1488DB; /* 2px / 16 */
+    transition: background-color 0.3s ease;
+}
+
+.custom-button2:hover {
+    border: 0.0625rem solid #000000; /* 1px / 16 */
+    background-color: #F5F5F5;
+}
+
+.form-check-input {
+    border: 0.0625rem solid #000000; /* 1px / 16 */
+}
+
+.fc1 {
+    padding-right: 1.875rem; /* 30px / 16 */
+}
+
+.custom-calendar {
+    margin-left: 11.2rem;
+    font-weight: 600;
+    z-index: 1000;
+}
+
