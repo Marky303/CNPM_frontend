@@ -29,6 +29,7 @@ import PageNotFound from "./pages/Error/PageNotFound";
 
 // Import bootstrap css
 import "bootstrap/dist/css/bootstrap.min.css";
+
 const App = () => (
   <BrowserRouter>
     <Routes>
@@ -50,7 +51,6 @@ const App = () => (
       </Route>
     </Routes>
   </BrowserRouter>
-
 );
 
 export default App;

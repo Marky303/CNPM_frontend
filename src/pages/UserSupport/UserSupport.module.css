@@ -1,7 +1,6 @@
 .container {
     background-color: #ffffff;
-    border: 1px solid;
-    border-color: #000000;
+    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -9,8 +8,7 @@
     padding-top: 41px;
     padding-left: auto;
     padding-right: auto;
-    margin-top: 73px;
-    margin-bottom: 53px;
+    
   }
   
   .reportForm {

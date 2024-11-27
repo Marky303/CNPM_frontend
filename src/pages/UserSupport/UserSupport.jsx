@@ -1,7 +1,9 @@
 import styles from "./UserSupport.module.css";
-import Dropzone from "../components/Dropzone/Dropzone.jsx";
+import Dropzone from "../../components/Dropzone/Dropzone";
+
 function UserSupport() {
 
+    
     function handleClickSend(){
 
     }
@@ -10,6 +12,7 @@ function UserSupport() {
     }
   return (
     <div className={styles.container}>
+      
       <div className={styles.reportForm}>
 
         <Dropzone />
