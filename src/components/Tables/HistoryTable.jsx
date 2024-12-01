@@ -79,13 +79,11 @@ const HistoryTable = () => {
       </div>
       <div className="bigtable-content">
         <div className="bigtable-header-trip">
-          <div className="column-header">Title</div>
-          <div className="column-header">Start</div>
-          <div className="column-header">End</div>
-          <div className="column-header">Departure</div>
-          <div className="column-header">Est Arrival</div>
-          <div className="column-header">Actual Arrival</div>
-          <div className="column-header">Vehicle</div>
+          <div className="column-header">Máy in</div>
+          <div className="column-header">Thời gian</div>
+          <div className="column-header">Địa điểm</div>
+          <div className="column-header">Tên file</div>
+          <div className="column-header">Phí</div>
           <div className="fillerdiv"></div>
         </div>
         <div className="bigtable-body">
@@ -95,8 +93,6 @@ const HistoryTable = () => {
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
           </button>
           <button className="bigtable-entry-history" id="69420">
             <div className="bigtable-entry-field">One</div>
@@ -104,8 +100,6 @@ const HistoryTable = () => {
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
           </button>
           <button className="bigtable-entry-history" id="69420">
             <div className="bigtable-entry-field">One</div>
@@ -113,8 +107,6 @@ const HistoryTable = () => {
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
           </button>
           <button className="bigtable-entry-history" id="69420">
             <div className="bigtable-entry-field">One</div>
@@ -122,8 +114,6 @@ const HistoryTable = () => {
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
           </button>
           <button className="bigtable-entry-history" id="69420">
             <div className="bigtable-entry-field">One</div>
@@ -131,80 +121,6 @@ const HistoryTable = () => {
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">asd</div>
             <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
-          </button>
-          <button className="bigtable-entry-history" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">asdasd</div>
           </button>
           {/* {history.length != 0 ? (
           history.map((trip) => (

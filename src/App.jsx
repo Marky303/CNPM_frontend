@@ -29,6 +29,7 @@ import Dashboard from "./pages/Main/Dashboard";
 import Print from "./pages/Printing/Print"
 import Token from "./pages/Printing/Token";
 import History from "./pages/Printing/History";
+import Printer from "./pages/Printing/Printers";
 
 // Import special pages
 import PageNotFound from "./pages/Error/PageNotFound";
@@ -53,6 +54,7 @@ const App = () => (
               <Route exact path="/print" element={<Print />} />
               <Route exact path="/token" element={<Token />} />
               <Route exact path="/history" element={<History />} />
+              <Route exact path="/printer" element={<Printer />} />
             </Route>
           </Route>
         </Route>
