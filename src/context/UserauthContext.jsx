@@ -103,7 +103,10 @@ export const UserauthProvider = () => {
         throw e;
       }
     } catch (err) {
-      notify("error", err.response.data.detail);
+      let list = err.response.data.error
+      list.forEach(item => {
+        notify("error", item);
+      });
     }
 
     // Change loading back to false
@@ -132,12 +135,15 @@ export const UserauthProvider = () => {
         localStorage.setItem("userinfo", response.data);
 
         // TEST
-        console.log(response.data);
+        // console.log(response.data);
       } else {
         throw e;
       }
     } catch (err) {
-      notify("error", err.response.data.detail);
+      let list = err.response.data.error
+      list.forEach(item => {
+        notify("error", item);
+      });
     }
   };
 

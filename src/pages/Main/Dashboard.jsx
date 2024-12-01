@@ -21,7 +21,7 @@ const Dashboard = () => {
     const file = e.dataTransfer.files[0];
 
     // TEST
-    console.log(file);
+    // console.log(file);
 
     if (file) {
       // Navigate to preview page with file info

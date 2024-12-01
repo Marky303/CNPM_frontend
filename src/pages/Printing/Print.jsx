@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // Import bootstrap tags
@@ -11,7 +11,13 @@ import Dropdown from "react-bootstrap/Dropdown";
 // Import dashboard page styles
 import "../../pagestyles/dashboard.css";
 
+// Import context
+import PrintingContext from "../../context/PrintingContext";
+
 const Print = () => {
+  // Get context dependencies
+  let { getActivePrinters, printerList, printDocument } = useContext(PrintingContext);
+
   // Setup
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,6 +26,8 @@ const Print = () => {
   useEffect(() => {
     if (!fileName) {
       navigate("/filenotfound");
+    } else {
+      getActivePrinters();
     }
   }, []);
 
@@ -43,6 +51,7 @@ const Print = () => {
     e.preventDefault();
 
     // Call submit function
+    printDocument(e);
   };
 
   return (
@@ -89,11 +98,15 @@ const Print = () => {
             >
               <i className="fa-solid fa-print"></i> Máy in
             </Form.Label>
-            <Form.Select aria-label="Default select example">
+            <Form.Select name="printer" aria-label="Default select example">
               <option>Chọn máy in...</option>
-              <option value="A4">Máy in 1</option>
-              <option value="A3">Máy in 2</option>
-              <option value="A2">Máy in 3</option>
+              {printerList.length != 0 ? (
+                printerList.map((printer) => (
+                  <option value={printer.id}>{printer.Name} | {printer.Location}</option>
+                ))
+              ) : (
+                <option value="nuhuh">Không có máy in tróng</option>
+              )}
             </Form.Select>
           </Form.Group>
 
@@ -139,7 +152,7 @@ const Print = () => {
             >
               <i className="fa-solid fa-square-up-right"></i> Hướng trang
             </Form.Label>
-            <Form.Select aria-label="Default select example" name="size">
+            <Form.Select aria-label="Default select example" name="direction">
               <option>Chọn hướng trang in...</option>
               <option value="Vertical">Dọc</option>
               <option value="Horizontal">Ngang</option>
@@ -176,6 +189,11 @@ const Print = () => {
             In tài liệu ({formData.pages * formData.copies * formData.size}{" "}
             token <i className="fa-solid fa-circle-dollar-to-slot"></i>)
           </Button>
+          <Form.Control
+              type="hidden"
+              name="filename"
+              value={fileName}
+            />
         </Form>
       </div>
     </div>

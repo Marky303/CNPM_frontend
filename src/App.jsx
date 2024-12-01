@@ -26,7 +26,7 @@ import Signup from "./pages/Auth/Signup";
 import Dashboard from "./pages/Main/Dashboard";
 
 // Import print related pages
-import Print from "./pages/Printing/Print"
+import Print from "./pages/Printing/Print";
 import Token from "./pages/Printing/Token";
 import History from "./pages/Printing/History";
 import Printer from "./pages/Printing/Printers";
@@ -43,26 +43,28 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<UserauthProvider />}>
-        <Route exact path="/" element={<PrivateRouteCheck />}>
-          <Route exact path="/" element={<Layout />}>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/features" element={<Features />} />
-            <Route exact path="/pricing" element={<Pricing />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/" element={<PrintingProvider />}>
+          <Route exact path="/" element={<PrivateRouteCheck />}>
+            <Route exact path="/" element={<Layout />}>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/features" element={<Features />} />
+              <Route exact path="/pricing" element={<Pricing />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/signup" element={<Signup />} />
 
-            <Route exact path="/" element={<ChatBubbleLayout />}>
-              <Route exact path="/dashboard" element={<Dashboard />} />
-              <Route exact path="/print" element={<Print />} />
-              <Route exact path="/token" element={<Token />} />
-              <Route exact path="/history" element={<History />} />
-              <Route exact path="/printer" element={<Printer />} />
-              <Route exact path="/addprinter" element={<AddPrinter />} />
-              <Route exact path="/editprinter" element={<EditPrinter />} />
+              <Route exact path="/" element={<ChatBubbleLayout />}>
+                <Route exact path="/dashboard" element={<Dashboard />} />
+                <Route exact path="/print" element={<Print />} />
+                <Route exact path="/token" element={<Token />} />
+                <Route exact path="/history" element={<History />} />
+                <Route exact path="/printer" element={<Printer />} />
+                <Route exact path="/addprinter" element={<AddPrinter />} />
+                <Route exact path="/editprinter/:id" element={<EditPrinter />} />
+              </Route>
             </Route>
           </Route>
+          <Route exact path="*" element={<PageNotFound />} />
         </Route>
-        <Route exact path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
   </BrowserRouter>

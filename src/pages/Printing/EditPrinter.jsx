@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Navigate, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 // Import bootstrap tags
 import Button from "react-bootstrap/Button";
@@ -8,12 +8,45 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import { Col } from "react-bootstrap";
 
+// Import context
+import PrintingContext from "../../context/PrintingContext";
+
 const EditPrinter = () => {
   // Get navigate function
   const navigate = useNavigate();
 
+  // Get context dependencies
+  let { printerList, editPrinter } = useContext(PrintingContext);
+
+  // Get the current printer and load fields
+  const { id } = useParams();
+  const printer = printerList.find((p) => p.id == parseInt(id));
+  const printerInfo = {
+    serialID: printer ? printer.SerialNumber : null,
+    name: printer ? printer.Name : null,
+    brand: printer ? printer.Brand : null,
+    model: printer ? printer.Model : null,
+    location: printer ? printer.Location : null,
+  };
+  const textFieldList = ["serialID", "name", "brand", "model", "location"];
+
+  useEffect(() => {
+    for (let i of textFieldList) {
+      let element;
+      element = document.getElementsByName(i)[0];
+      element.setAttribute("value", printerInfo[i]);
+    }
+  }, []);
+
   // Back to printer list
   const handleBack = () => {
+    navigate("/printer");
+  };
+
+  // Edit printer
+  const handleSubmit = (e) => {
+    editPrinter(e);
+    // Navigate back
     navigate("/printer");
   };
 
@@ -66,7 +99,7 @@ const EditPrinter = () => {
               </Form.Label>
               <Form.Control
                 type="text"
-                name="email"
+                name="serialID"
                 placeholder="Nhập ID của máy in..."
               />
             </Form.Group>
@@ -81,7 +114,7 @@ const EditPrinter = () => {
               </Form.Label>
               <Form.Control
                 type="text"
-                name="text"
+                name="name"
                 placeholder="Nhập tên của máy in..."
               />
             </Form.Group>
@@ -95,7 +128,7 @@ const EditPrinter = () => {
               </Form.Label>
               <Form.Control
                 type="text"
-                name="text"
+                name="brand"
                 placeholder="Nhập thương hiệu của máy in"
               />
             </Form.Group>
@@ -105,11 +138,11 @@ const EditPrinter = () => {
                   color: "white",
                 }}
               >
-                <i class="fa-solid fa-square-binary"></i> Model
+                <i className="fa-solid fa-square-binary"></i> Model
               </Form.Label>
               <Form.Control
                 type="text"
-                name="text"
+                name="model"
                 placeholder="Nhập model của máy in..."
               />
             </Form.Group>
@@ -123,7 +156,7 @@ const EditPrinter = () => {
               </Form.Label>
               <Form.Control
                 type="text"
-                name="text"
+                name="location"
                 placeholder="Nhập địa điểm của máy in..."
               />
             </Form.Group>
@@ -153,6 +186,7 @@ const EditPrinter = () => {
                 </Button>
               </Col>
             </Row>
+            <Form.Control type="hidden" name="id" value={id} />
           </Form>
         </div>
       </Row>
