@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Import contexts
 import { UserauthProvider } from "./context/UserauthContext";
+import { PrintingProvider } from "./context/PrintingContext";
 
 // Import private route/link check
 import PrivateRouteCheck from "./hocs/PrivateRouteCheck";

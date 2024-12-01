@@ -1,8 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+
+// Import component
+import HistoryTable from "../../components/Tables/HistoryTable";
 
 const History = () => {
-  return <div>THis is the history page</div>;
+  return (
+    <div className="driverpage-wrapper">
+      <HistoryTable />
+    </div>
+  );
 };
 
 export default History;
