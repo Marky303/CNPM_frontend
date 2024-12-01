@@ -1,11 +1,14 @@
+.filter_notation {
+  text-align: center;
+  padding-top: 5px;
+}
+
 .filter-section {
-    border: solid;
   width: 95%;
   margin: auto;
   margin-top: 15px;
   margin-bottom: 10px;
 }
-
 
 .bigtable-content {
   border: none;

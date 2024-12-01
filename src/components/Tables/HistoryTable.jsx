@@ -27,26 +27,49 @@ const HistoryTable = () => {
           <Row>
             <div class="col-md-3">
               <Row>
-                <Col>Từ ngày</Col>
-                <Col>
+                <Col className="filter_notation">Từ ngày</Col>
+                <Col xs={8}>
                   <Form.Control
                     type="date"
                     name="password"
                     placeholder="Từ ngày"
-                    className="col-md-3"
                   />
                 </Col>
               </Row>
             </div>
             <div class="col-md-3">
               <Row>
-                <Col>Từ ngày</Col>
-                <Col>
+                <Col className="filter_notation">Đến ngày</Col>
+                <Col xs={8}>
                   <Form.Control
                     type="date"
                     name="password"
                     placeholder="Từ ngày"
-                    className="col-md-3"
+                  />
+                </Col>
+              </Row>
+            </div>
+            <div class="col-md-3">
+              <Row>
+                <Col>
+                  <Form.Select aria-label="Default select example" name="size">
+                    <option>Chọn máy in...</option>
+                    <option value="Vertical">Máy in 1</option>
+                    <option value="Horizontal">Máy in 1</option>
+                  </Form.Select>
+                </Col>
+              </Row>
+            </div>
+            <div class="col-md-3">
+              <Row>
+                <Col className="filter_notation">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </Col>
+                <Col xs={10}>
+                  <Form.Control
+                    type="text"
+                    name="password"
+                    placeholder="Tìm kiếm"
                   />
                 </Col>
               </Row>
