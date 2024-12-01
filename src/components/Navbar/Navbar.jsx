@@ -22,7 +22,7 @@ const dict = {
 
 const NavbarComponent = () => {
   // Get functions + variables from contexts
-  let { accessToken, logout } = useContext(AuthContext);
+  let { accessToken, userinfo, logout } = useContext(AuthContext);
 
   // Check for location and highlights
   const location = useLocation().pathname;
@@ -34,6 +34,9 @@ const NavbarComponent = () => {
       e.style.fontWeight = "600";
     }
   }, [location]);
+
+  // Check if information is loaded
+  useEffect(() => {}, [userinfo]);
 
   // Logout
   const handleLogout = () => {
@@ -57,22 +60,35 @@ const NavbarComponent = () => {
             width="30"
             height="30"
             className="d-inline-block align-top"
-          />
-          {" "}
+          />{" "}
           {import.meta.env.VITE_APPLICATION_NAME}
         </Navbar.Brand>
         {accessToken ? (
-          <Nav className="me-auto">
-            <Nav.Link className="navlink-dashboard" href="/">
-              Dashboard
-            </Nav.Link>
-            <Nav.Link className="navlink-personel" href="/personel">
-              Personel
-            </Nav.Link>
-            <Nav.Link className="navlink-dispatch" href="/dispatch">
-              Dispatch
-            </Nav.Link>
-          </Nav>
+          (userinfo ? userinfo.is_SPSO : null) ? (
+            <Nav className="me-auto">
+              <Nav.Link className="navlink-dashboard" href="/">
+                ADMIN
+              </Nav.Link>
+              <Nav.Link className="navlink-personel" href="/personel">
+                Personel
+              </Nav.Link>
+              <Nav.Link className="navlink-dispatch" href="/dispatch">
+                Dispatch
+              </Nav.Link>
+            </Nav>
+          ) : (
+            <Nav className="me-auto">
+              <Nav.Link className="navlink-dashboard" href="/dashboard">
+                In tài liệu
+              </Nav.Link>
+              <Nav.Link className="navlink-personel" href="/history">
+                Xem lịch sử
+              </Nav.Link>
+              <Nav.Link className="navlink-dispatch" href="/token">
+                Mua token
+              </Nav.Link>
+            </Nav>
+          )
         ) : (
           <Nav className="me-auto">
             <Nav.Link className="navlink-home" href="/">

@@ -24,6 +24,9 @@ import Signup from "./pages/Auth/Signup";
 // Import main pages
 import Dashboard from "./pages/Main/Dashboard";
 
+// Import print related pages
+import Print from "./pages/Printing/Print"
+
 // Import special pages
 import PageNotFound from "./pages/Error/PageNotFound";
 
@@ -44,6 +47,7 @@ const App = () => (
 
             <Route exact path="/" element={<ChatBubbleLayout />}>
               <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route exact path="/print" element={<Print />} />
             </Route>
           </Route>
         </Route>

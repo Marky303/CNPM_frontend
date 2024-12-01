@@ -28,6 +28,11 @@ export const UserauthProvider = () => {
       : null
   );
 
+  // User information
+  let [userinfo, setUserinfo] = useState(() =>
+    localStorage.getItem("userinfo") ? localStorage.getItem("userinfo") : null
+  );
+
   // Session expire time
   let [sessionExpireTime, setSessionExpireTime] = useState(() =>
     localStorage.getItem("sessionExpireTime")
@@ -87,6 +92,11 @@ export const UserauthProvider = () => {
           );
         }
 
+        // Get user information
+        getUserinfo();
+
+        console.log(userinfo);
+
         // Redirect
         navigate("/dashboard");
       } else {
@@ -100,13 +110,46 @@ export const UserauthProvider = () => {
     setLoading(false);
   };
 
+  // Get user info function
+  const getUserinfo = async () => {
+    try {
+      // Post request and get response
+      const response = await axios.get(
+        import.meta.env.VITE_BACKEND_USERINFO_ENDPOINT,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
+
+      // TEST
+      // console.log(response.data);
+
+      // Check response
+      if (response && response.status == 200) {
+        // Set userinfo
+        setUserinfo(response.data);
+        // Save to local storage
+        localStorage.setItem("userinfo", response.data);
+      } else {
+        throw e;
+      }
+    } catch (err) {
+      notify("error", err.response.data.detail);
+    }
+  };
+
   // Logout function
   const logout = () => {
     // Delete all token in local storage
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
+    localStorage.removeItem("userinfo");
     setAccessToken(null);
     setRefreshToken(null);
+    setUserinfo(null);
 
     // Delete session expire time
     localStorage.removeItem("sessionExpireTime");
@@ -124,6 +167,7 @@ export const UserauthProvider = () => {
     // Variables
     accessToken: accessToken,
     loading: loading,
+    userinfo: userinfo,
 
     // Functions
     login: login,
@@ -131,10 +175,10 @@ export const UserauthProvider = () => {
   };
 
   // Session expire time check
-  useEffect(() => {
-    // Log out if session is over
-    if (sessionExpireTime && Date.now() >= sessionExpireTime) logout();
-  }, []);
+  // useEffect(() => {
+  //   // Log out if session is over
+  //   if (sessionExpireTime && Date.now() >= sessionExpireTime) logout();
+  // }, []);
 
   return (
     <UserauthContext.Provider value={contextData}>
