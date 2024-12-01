@@ -17,9 +17,11 @@ const Print = () => {
   const location = useLocation();
   const { fileName, fileSize, fileType } = location.state || {};
 
-  if (!fileName) {
-    navigate("/filenotfound");
-  }
+  useEffect(() => {
+    if (!fileName) {
+      navigate("/filenotfound");
+    }
+  }, []);
 
   // Handle form change
   const [formData, setFormData] = useState({

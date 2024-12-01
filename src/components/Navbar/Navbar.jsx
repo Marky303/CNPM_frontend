@@ -22,7 +22,7 @@ const dict = {
 
 const NavbarComponent = () => {
   // Get functions + variables from contexts
-  let { accessToken, userinfo, logout } = useContext(AuthContext);
+  let { accessToken, userinfo, logout, getUserinfo } = useContext(AuthContext);
 
   // Check for location and highlights
   const location = useLocation().pathname;
@@ -35,8 +35,10 @@ const NavbarComponent = () => {
     }
   }, [location]);
 
-  // Check if information is loaded
-  useEffect(() => {}, [userinfo]);
+  // Get userinfo and whatnot
+  useEffect(() => {
+    if (accessToken) getUserinfo();
+  }, []);
 
   // Logout
   const handleLogout = () => {
@@ -108,7 +110,12 @@ const NavbarComponent = () => {
             <DropdownButton
               as={ButtonGroup}
               variant={"primary"}
-              title={(userinfo ? userinfo.name : null) +  " | " + (userinfo ? userinfo.token : null) + " $"}
+              title={
+                (userinfo ? userinfo.name : null) +
+                " | " +
+                (userinfo ? userinfo.token : null) +
+                " $"
+              }
               style={{
                 width: "auto",
                 borderWidth: 1 + "px",
@@ -116,9 +123,9 @@ const NavbarComponent = () => {
                 backgroundColor: "gre",
               }}
             >
-              <Dropdown.Item href="/account" eventKey="1">
+              {/* <Dropdown.Item href="/account" eventKey="1">
                 Account
-              </Dropdown.Item>
+              </Dropdown.Item> */}
               <Dropdown.Item
                 onClick={() => {
                   handleLogout();

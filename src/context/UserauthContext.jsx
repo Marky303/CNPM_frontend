@@ -172,6 +172,7 @@ export const UserauthProvider = () => {
     // Functions
     login: login,
     logout: logout,
+    getUserinfo: getUserinfo,
   };
 
   // Session expire time check

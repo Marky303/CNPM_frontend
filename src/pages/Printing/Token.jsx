@@ -21,12 +21,13 @@ const Token = () => {
                 margin: 0 + "px",
                 marginBottom: 10 + "px",
                 color: "black",
+                textDecoration: "underline"
               }}
             >
               Mua token
             </p>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3 mt-1" controlId="formBasicEmail">
               <Form.Label
                 style={{
                   color: "back",
