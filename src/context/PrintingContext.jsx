@@ -170,8 +170,8 @@ export const PrintingProvider = () => {
         // Notify
         notify("success", response.data.detail);
 
-        // GET NEW HISTORY
-        checkHistory();
+        // GET NEW userifno
+        getUserinfo();
 
         // Navigate back
         navigate("/dashboard");

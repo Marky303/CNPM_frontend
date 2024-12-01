@@ -38,7 +38,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard_wrapper">
       {(userinfo ? userinfo.is_SPSO : null) ? (
-        <div> This is the dashboard page</div>
+        navigate("/printer")
       ) : (
         <div className="print_wrapper">
           <div className="fileupload_wrapper">

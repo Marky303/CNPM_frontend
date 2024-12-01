@@ -68,9 +68,9 @@ const NavbarComponent = () => {
         {accessToken ? (
           (userinfo ? userinfo.is_SPSO : null) ? (
             <Nav className="me-auto">
-              <Nav.Link className="navlink-dashboard" href="/dashboard">
+              {/* <Nav.Link className="navlink-dashboard" href="/dashboard">
                 Dashboard
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link className="navlink-personel" href="/printer">
                 Quản lý máy in
               </Nav.Link>
