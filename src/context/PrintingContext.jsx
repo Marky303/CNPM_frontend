@@ -27,7 +27,80 @@ export const PrintingProvider = () => {
   // History for history table
   let [history, setHistory] = useState([]);
 
+  // History for history table
+  let [settings, setSettings] = useState([]);
+
   // FUNCTIONS
+  // Change settings
+  const changeSettings = async (e) => {
+    try {
+      // Create request body
+      const body = {
+        Token: e.target.Token.value,
+        Time: e.target.Time.value,
+        AllowedFiles: e.target.AllowedFiles.value,
+      };
+
+      // Post request and get response
+      const response = await axios.post(
+        import.meta.env.VITE_BACKEND_CHANGESETTING_ENDPOINT,
+        body,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
+
+      // Check response
+      if (response && response.status == 200) {
+        // Notify
+        notify("success", response.data.detail);
+
+        checkSettings();
+      } else {
+        throw e;
+      }
+    } catch (err) {
+      let list = err.response.data.error;
+      list.forEach((item) => {
+        notify("error", item);
+      });
+    }
+  };
+
+  // Check settings
+  const checkSettings = async () => {
+    try {
+      // Post request and get response
+      const response = await axios.get(
+        import.meta.env.VITE_BACKEND_CHECKSETTING_ENDPOINT,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
+
+      // Check response
+      if (response && response.status == 200) {
+        setSettings(response.data);
+
+        // TEST
+        console.log(response.data);
+      } else {
+        throw e;
+      }
+    } catch (err) {
+      let list = err.response.data.error;
+      list.forEach((item) => {
+        notify("error", item);
+      });
+    }
+  };
+
   // Check history
   const checkHistory = async (info) => {
     try {
@@ -101,7 +174,7 @@ export const PrintingProvider = () => {
         checkHistory();
 
         // Navigate back
-        navigate("/history");
+        navigate("/dashboard");
       } else {
         throw e;
       }
@@ -377,6 +450,7 @@ export const PrintingProvider = () => {
     // Variables
     printerList: printerList,
     history: history,
+    settings: settings,
 
     // Functions
     getAllPrinters: getAllPrinters,
@@ -388,6 +462,8 @@ export const PrintingProvider = () => {
     buyToken: buyToken,
     printDocument: printDocument,
     checkHistory: checkHistory,
+    checkSettings: checkSettings,
+    changeSettings: changeSettings,
   };
 
   return (

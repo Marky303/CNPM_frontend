@@ -1,6 +1,6 @@
 // Declare private and public route groups
 const publicRoutes = ["/", "/features", "/pricing", "/login", "/signup"];
-const privateRoutes = ["/dashboard", "/history", "/printing", "/token"];
+const privateRoutes = ["/dashboard", "/history", "/printing", "/token", "/printer", "/setting"];
 
 // Function to check for private/public routes
 export default function checkPrivateRoute(link) {

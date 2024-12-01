@@ -1,0 +1,11 @@
+.setting_background {
+    border: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: rgb(230, 230, 230);
+    height: 55vh;
+    width: 55%;
+
+    margin: auto;
+    margin-top: 55px;
+}

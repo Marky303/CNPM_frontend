@@ -32,6 +32,7 @@ import History from "./pages/Printing/History";
 import Printer from "./pages/Printing/Printers";
 import AddPrinter from "./pages/Printing/AddPrinter";
 import EditPrinter from "./pages/Printing/EditPrinter";
+import Setting from "./pages/Printing/Setting";
 
 // Import special pages
 import PageNotFound from "./pages/Error/PageNotFound";
@@ -60,6 +61,7 @@ const App = () => (
                 <Route exact path="/printer" element={<Printer />} />
                 <Route exact path="/addprinter" element={<AddPrinter />} />
                 <Route exact path="/editprinter/:id" element={<EditPrinter />} />
+                <Route exact path="/setting" element={<Setting />} />
               </Route>
             </Route>
           </Route>

@@ -77,6 +77,9 @@ const NavbarComponent = () => {
               <Nav.Link className="navlink-dispatch" href="/history">
                 Xem lịch sử
               </Nav.Link>
+              <Nav.Link className="navlink-dispatch" href="/setting">
+                Cài đặt
+              </Nav.Link>
             </Nav>
           ) : (
             <Nav className="me-auto">
