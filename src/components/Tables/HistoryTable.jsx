@@ -127,7 +127,7 @@ const HistoryTable = () => {
           {history && history.length !== 0 ? (
             history.map((entry) => (
               <button className="bigtable-entry-history" id={entry.id}>
-                <div className="bigtable-entry-field">{entry.Printer.Name}</div>
+                <div className="bigtable-entry-field">{entry.Printer ? entry.Printer.Name : null}</div>
                 <div className="bigtable-entry-field">{entry.Date.split(" ")[0]}</div>
                 <div className="bigtable-entry-field">{entry.Location}</div>
                 <div className="bigtable-entry-field">{entry.FileName}</div>
