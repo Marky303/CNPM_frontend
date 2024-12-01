@@ -108,9 +108,9 @@ const NavbarComponent = () => {
             <DropdownButton
               as={ButtonGroup}
               variant={"primary"}
-              title={"Mark Stanley"}
+              title={(userinfo ? userinfo.name : null) +  " | " + (userinfo ? userinfo.token : null) + " $"}
               style={{
-                width: 10 + "rem",
+                width: "auto",
                 borderWidth: 1 + "px",
                 border: "solid",
                 backgroundColor: "gre",

@@ -124,15 +124,15 @@ export const UserauthProvider = () => {
         }
       );
 
-      // TEST
-      // console.log(response.data);
-
       // Check response
       if (response && response.status == 200) {
         // Set userinfo
         setUserinfo(response.data);
         // Save to local storage
         localStorage.setItem("userinfo", response.data);
+
+        // TEST
+        console.log(response.data);
       } else {
         throw e;
       }
