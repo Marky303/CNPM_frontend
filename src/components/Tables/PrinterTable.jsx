@@ -20,6 +20,16 @@ const PrinterTable = () => {
 
   useEffect(() => {}, [history]);
 
+  // Add printer
+  const handleAddPrinter = () => {
+    navigate("/addprinter");
+  };
+
+  // Edit printer
+  const handleEditPrinter = () => {
+    navigate("/editprinter");
+  };
+
   return (
     <div>
       <div className="bigtable-content-printer">
@@ -30,7 +40,12 @@ const PrinterTable = () => {
           <div className="column-header">Model</div>
           <div className="column-header">Địa điểm</div>
           <div className="column-header">Trạng thái</div>
-          <Button className="m-3">
+          <Button
+            onClick={() => {
+              handleAddPrinter();
+            }}
+            className="m-3"
+          >
             <i className="fa-solid fa-plus"></i> Thêm
           </Button>
           <div className="fillerdiv"></div>
@@ -47,64 +62,13 @@ const PrinterTable = () => {
               <Button variant="primary" className="mb-2">
                 <i className="fa-solid fa-repeat"></i>
               </Button>
-              <Button variant="warning" className="mb-2 ms-1">
-                <i className="fa-solid fa-pen-to-square"></i>
-              </Button>
-              <Button variant="danger" className="mb-2 ms-1">
-                <i className="fa-regular fa-trash-can"></i>
-              </Button>
-            </div>
-          </button>
-          <button className="bigtable-entry-printer" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">
-              <Button variant="primary" className="mb-2">
-                <i className="fa-solid fa-repeat"></i>
-              </Button>
-              <Button variant="warning" className="mb-2 ms-1">
-                <i className="fa-solid fa-pen-to-square"></i>
-              </Button>
-              <Button variant="danger" className="mb-2 ms-1">
-                <i className="fa-regular fa-trash-can"></i>
-              </Button>
-            </div>
-          </button>
-          <button className="bigtable-entry-printer" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">
-              <Button variant="primary" className="mb-2">
-                <i className="fa-solid fa-repeat"></i>
-              </Button>
-              <Button variant="warning" className="mb-2 ms-1">
-                <i className="fa-solid fa-pen-to-square"></i>
-              </Button>
-              <Button variant="danger" className="mb-2 ms-1">
-                <i className="fa-regular fa-trash-can"></i>
-              </Button>
-            </div>
-          </button>
-          <button className="bigtable-entry-printer" id="69420">
-            <div className="bigtable-entry-field">One</div>
-            <div className="bigtable-entry-field">asdasd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">asd</div>
-            <div className="bigtable-entry-field">sdads</div>
-            <div className="bigtable-entry-field">sdadsa</div>
-            <div className="bigtable-entry-field">
-              <Button variant="primary" className="mb-2">
-                <i className="fa-solid fa-repeat"></i>
-              </Button>
-              <Button variant="warning" className="mb-2 ms-1">
+              <Button
+                onClick={() => {
+                  handleEditPrinter();
+                }}
+                variant="warning"
+                className="mb-2 ms-1"
+              >
                 <i className="fa-solid fa-pen-to-square"></i>
               </Button>
               <Button variant="danger" className="mb-2 ms-1">
