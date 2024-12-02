@@ -46,6 +46,11 @@ const Dashboard = () => {
     },
   ];
 
+  // Set progression
+  const monthData = dashboard.history ? dashboard.history.map(item => item.time) : [];
+
+  const tokenData = dashboard.history ? dashboard.history.map(item => item.token) : [];
+
   // Handle file drag and drop
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -165,12 +170,12 @@ const Dashboard = () => {
                     xAxis={[
                       {
                         scaleType: "band",
-                        data: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        data: monthData,
                       },
                     ]}
                     series={[
                       {
-                        data: [5, 55, 5, 189, 5, 315],
+                        data: tokenData,
                         color: "#0593ff",
                         label: "Token",
                       },
