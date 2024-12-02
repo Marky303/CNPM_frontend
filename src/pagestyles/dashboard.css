@@ -1,3 +1,91 @@
+.side-card-header {
+  vertical-align: middle;
+  line-height: 35px;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.main-card-header {
+  vertical-align: middle;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.side-card-line {
+  margin-top: 7px;
+}
+
+.side-card-counter {
+  vertical-align: middle;
+  line-height: 60px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.printer-count-dashboard-active {
+  color: rgb(0, 175, 0);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 35px;
+}
+
+.printer-count-dashboard-maint {
+  color: red;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 35px;
+}
+
+.printer-detail-wrapper {
+  height: 80px;
+  width: 100%;
+}
+
+.printer-detail-text-dashboard {
+  text-align: left;
+  vertical-align: middle;
+  line-height: 25px;
+}
+
+.main-card-background {
+  border: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  background-color: rgb(239, 239, 239);
+}
+
+.main-card-wrapper {
+  height: 90vh;
+  padding: 15px;
+  padding-right: 40px;
+}
+
+.side-card-background {
+  border: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  width: 87%;
+  margin: auto;
+  height: 100%;
+  background-color: rgb(239, 239, 239);
+  padding-right: 0px;
+}
+
+.side-card-wrapper {
+  height: 30vh;
+  padding: 15px;
+  padding-right: 0px;
+}
+
 .dashboard_wrapper {
   height: 550px;
 }

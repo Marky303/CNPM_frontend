@@ -30,7 +30,41 @@ export const PrintingProvider = () => {
   // History for history table
   let [settings, setSettings] = useState([]);
 
+  // Dashboard info for dashboard
+  let [dashboard, setDashboard] = useState({});
+
   // FUNCTIONS
+  // Get dashboard info
+  const getDashboard = async () => {
+    try {
+      // Post request and get response
+      const response = await axios.get(
+        import.meta.env.VITE_BACKEND_GETDASHBOARD_ENDPOINT,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
+
+      // Check response
+      if (response && response.status == 200) {
+        setDashboard(response.data);
+
+        // TEST
+        console.log(response.data);
+      } else {
+        throw e;
+      }
+    } catch (err) {
+      let list = err.response.data.error;
+      list.forEach((item) => {
+        notify("error", item);
+      });
+    }
+  };
+
   // Change settings
   const changeSettings = async (e) => {
     try {
@@ -451,6 +485,7 @@ export const PrintingProvider = () => {
     printerList: printerList,
     history: history,
     settings: settings,
+    dashboard: dashboard,
 
     // Functions
     getAllPrinters: getAllPrinters,
@@ -464,6 +499,7 @@ export const PrintingProvider = () => {
     checkHistory: checkHistory,
     checkSettings: checkSettings,
     changeSettings: changeSettings,
+    getDashboard: getDashboard,
   };
 
   return (

@@ -60,7 +60,7 @@ const Login = () => {
                 color: "white",
               }}
             >
-              Login
+              Đăng nhập
             </p>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -69,12 +69,12 @@ const Login = () => {
                   color: "white",
                 }}
               >
-                <i className="fa-solid fa-envelope"></i> Email address
+                <i className="fa-solid fa-envelope"></i> Địa chỉ email
               </Form.Label>
               <Form.Control
                 type="text"
                 name="email"
-                placeholder="Enter your email"
+                placeholder="Điền email của bạn..."
                 disabled={loading}
               />
             </Form.Group>
@@ -85,12 +85,12 @@ const Login = () => {
                   color: "white",
                 }}
               >
-                <i className="fa-solid fa-key"></i> Password
+                <i className="fa-solid fa-key"></i> Mật khẩu
               </Form.Label>
               <Form.Control
                 type="password"
                 name="password"
-                placeholder="Enter your password"
+                placeholder="Điền mật khẩu..."
                 disabled={loading}
               />
             </Form.Group>
@@ -101,7 +101,7 @@ const Login = () => {
                 }}
                 type="checkbox"
                 name="remember"
-                label="Remember me"
+                label="Nhớ tôi"
                 disabled={loading}
               />
             </Form.Group>
@@ -113,7 +113,7 @@ const Login = () => {
               type="submit"
               disabled={loading}
             >
-              Submit
+              Xác nhận
             </Button>
 
             <p
@@ -122,14 +122,14 @@ const Login = () => {
                 color: "white",
               }}
             >
-              Don't have an account?{" "}
+              Không có tài khoản?{" "}
               <a
                 href="/signup"
                 style={{
                   color: "white",
                 }}
               >
-                Sign up here!
+                Tạo tài khoản!
               </a>
             </p>
           </Form>

@@ -58,7 +58,7 @@ const NavbarComponent = () => {
         <Navbar.Brand href={accessToken ? "/dashboard" : "/"}>
           <img
             alt=""
-            src="/src/assets/react.svg"
+            src="/src/assets/BKLogo.png"
             width="30"
             height="30"
             className="d-inline-block align-top"
@@ -68,9 +68,9 @@ const NavbarComponent = () => {
         {accessToken ? (
           (userinfo ? userinfo.is_SPSO : null) ? (
             <Nav className="me-auto">
-              {/* <Nav.Link className="navlink-dashboard" href="/dashboard">
+              <Nav.Link className="navlink-dashboard" href="/dashboard">
                 Dashboard
-              </Nav.Link> */}
+              </Nav.Link>
               <Nav.Link className="navlink-personel" href="/printer">
                 Quản lý máy in
               </Nav.Link>
@@ -97,13 +97,13 @@ const NavbarComponent = () => {
         ) : (
           <Nav className="me-auto">
             <Nav.Link className="navlink-home" href="/">
-              Home
+              Trang chủ
             </Nav.Link>
             <Nav.Link className="navlink-features" href="/features">
-              Features
+              Tính năng
             </Nav.Link>
             <Nav.Link className="navlink-pricing" href="/pricing">
-              Pricing
+              Chi phí
             </Nav.Link>
           </Nav>
         )}
@@ -135,7 +135,7 @@ const NavbarComponent = () => {
                 }}
                 eventKey="2"
               >
-                Logout
+                Đăng xuất
               </Dropdown.Item>
             </DropdownButton>
           </Navbar.Collapse>
@@ -144,7 +144,7 @@ const NavbarComponent = () => {
             <DropdownButton
               as={ButtonGroup}
               variant={"primary"}
-              title={"Get started"}
+              title={"Bắt đầu"}
               style={{
                 width: 10 + "rem",
                 borderWidth: 1 + "px",
@@ -153,10 +153,10 @@ const NavbarComponent = () => {
               }}
             >
               <Dropdown.Item href="/login" eventKey="1">
-                Login
+                Đăng nhập
               </Dropdown.Item>
               <Dropdown.Item href="/signup" eventKey="2">
-                Signup
+                Đăng ký
               </Dropdown.Item>
             </DropdownButton>
           </Navbar.Collapse>
