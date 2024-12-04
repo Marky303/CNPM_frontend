@@ -1,6 +1,6 @@
-# React + Vite
+# Frontend cho bài tập lớn CÔNG NGHỆ PHẦN MỀM
 
-Install necessary libraries
+Tải các thư viện cần thiết
 
 ```
 npm ci
